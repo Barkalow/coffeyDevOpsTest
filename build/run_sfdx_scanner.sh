@@ -1,9 +1,8 @@
 echo "Installing JDK"
-sudo apt-get install openjdk-8-jdk
-
-# Setup JAVA_HOME -- useful for docker commandline
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-RUN export JAVA_HOME
+apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
+apt-get -y update 
+apt-get -y upgrade
+apt-get install -y openjdk-8-jdk
 
 echo "Install SFDX Scanner"
 echo -e 'y/n' | sfdx plugins:install @salesforce/sfdx-scanner
