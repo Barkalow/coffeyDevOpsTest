@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: cimg/base
+      - image: cimg/node
     steps:
       - checkout
       - restore_cache:
