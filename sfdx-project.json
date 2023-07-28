@@ -6,7 +6,7 @@
     }
   ],
   "name": "coffeyDev",
-  "namespace": "",
+  "namespace": "coffeyDev",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "57.0"
 }
