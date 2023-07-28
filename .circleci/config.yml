@@ -45,28 +45,28 @@ jobs:
           command: . build/run_sfdx_scanner.sh
       - store_artifacts:
           path: sfdxScannerAnalysis.csv
-   deploy-code:
-    docker:
-       - image: cimg/node:latest
-     steps:
-       - checkout
-       - restore_cache:
-           keys:
-             - dependency-cache-{{ checksum "package.json" }}
-             - dependency-cache-
-       - run:
-           name: "Install Dependencies"
-           command: . build/install_dependencies.sh
-       - save_cache:
-           key: dependency-cache-{{ checksum "package.json" }}
-           paths:
-             - node_modules
-       - run: 
-           name: Login to Org
-           command: . build/login_to_org.sh
-       - run:
-           name: Deploy to Org
-           command: . build/deploy_code.sh
+#   deploy-code:
+ #    docker:
+#       - image: cimg/node:latest
+#     steps:
+#       - checkout
+#       - restore_cache:
+#           keys:
+#             - dependency-cache-{{ checksum "package.json" }}
+#             - dependency-cache-
+#       - run:
+#           name: "Install Dependencies"
+#           command: . build/install_dependencies.sh
+#       - save_cache:
+#           key: dependency-cache-{{ checksum "package.json" }}
+#           paths:
+#             - node_modules
+#       - run: 
+#           name: Login to Org
+#           command: . build/login_to_org.sh
+#       - run:
+#           name: Deploy to Org
+#           command: . build/deploy_code.sh
 workflows:
   version: 2
   validate:
@@ -75,6 +75,6 @@ workflows:
       - code-review:
           requires:
             - run-tests
-       - deploy-code:
-           requires:
-             - code-review
+  #     - deploy-code:
+  #         requires:
+  #           - code-review
