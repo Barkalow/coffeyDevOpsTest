@@ -15,7 +15,6 @@ jobs:
             sudo apt-get update && sudo apt-get install openjdk-17-jdk
             sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
             sudo update-alternatives --set javac /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
-            RUN export JAVA_HOME=$(readlink -f $(which java) | sed "s:/bin/java::")
       - run:
           name: Install Dependencies
           command: . build/install_dependencies.sh
