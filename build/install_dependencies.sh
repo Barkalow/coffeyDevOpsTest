@@ -2,4 +2,5 @@
 
 echo "Installing Salesforce CLI"
 sudo npm install -global sfdx-cli
-RUN export JAVA_HOME=$(readlink -f $(which java) | sed "s:/bin/java::")
+echo "export JAVA_HOME=/usr/lib/jvm/java-7-oracle" >>~/.bashrc
+echo "export PATH=$JAVA_HOME/bin:$PATH" >>~/.bashrc
