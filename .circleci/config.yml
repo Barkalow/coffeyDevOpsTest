@@ -45,6 +45,7 @@ jobs:
           command: |
             sudo apt-get update && sudo apt-get install openjdk-11-jdk
             java -version
+            yarn config set ignore-engines true
       - run:
           name: SFDX Scanner Analysis
           command:  |
