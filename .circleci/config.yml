@@ -17,7 +17,7 @@ jobs:
           paths:
             - node_modules
       - sfdx/auth:
-          defaultusername: SANDBOX_USERNAME
+          defaultusername: $SANDBOX_USERNAME
           consumerKey: SANDBOX_APP_KEY
           jwtKey: SANDBOX_CERT_KEY
           defaultdevhubusername: DevHub
