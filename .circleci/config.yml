@@ -28,7 +28,7 @@ jobs:
           path: test-results
   code-review:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:12.22.0
     steps:
       - checkout
       - restore_cache:
